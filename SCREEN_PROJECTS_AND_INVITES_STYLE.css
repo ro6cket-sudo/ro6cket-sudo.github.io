@@ -74,6 +74,12 @@ a:focus-visible, button:focus-visible {
     font-weight: bold;
 }
 
+.window-dots {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
 .main {
     display: grid;
     grid-template-columns: 240px minmax(0, 1fr);
@@ -155,6 +161,7 @@ a:focus-visible, button:focus-visible {
 .create-project {
     width: 180px;
     min-height: 36px;
+    background: #ffffff;
 }
 
 .decline {
