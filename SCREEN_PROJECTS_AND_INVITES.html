@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>screen projects and invites</title>
+    <link rel="stylesheet" href="SCREEN_PROJECTS_AND_INVITES_STYLE.css">
+</head>
+<body>
+    <header class="top-bar">
+        <span class="window-dots">
+            <svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path id="Circle" d="M8 4C8 1.79086 6.20914 0 4 0C1.79086 0 0 1.79086 0 4C0 6.20914 1.79086 8 4 8C6.20914 8 8 6.20914 8 4Z" fill="#4A4A4A"/>
+            </svg>
+            <svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path id="Circle" d="M8 4C8 1.79086 6.20914 0 4 0C1.79086 0 0 1.79086 0 4C0 6.20914 1.79086 8 4 8C6.20914 8 8 6.20914 8 4Z" fill="#4A4A4A"/>
+            </svg>
+            <svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path id="Circle" d="M8 4C8 1.79086 6.20914 0 4 0C1.79086 0 0 1.79086 0 4C0 6.20914 1.79086 8 4 8C6.20914 8 8 6.20914 8 4Z" fill="#4A4A4A"/>
+            </svg>
+        </span>
+        <span class="window-title">Мои проекты и приглашения</span>
+    </header>
+
+    <main class="main">
+        <aside class="sidebar">
+            <div class="logo">
+                <strong class="logo-title">StudentTracker</strong>
+                <span class="logo-subtitle">Баг-трекер</span>
+            </div>
+
+            <nav class="sidebar-menu">
+                <a class="current-page" href="#">[•] Мои проекты</a>
+            </nav>
+
+            <div class="profile">
+                @student132
+            </div>
+        </aside>
+
+        <div class="content">
+            <header class="content-header">
+                <h1 class="page-title">
+                    Список проектов и приглашений
+                </h1>
+                <a type="button" href="#">
+                    + Создать проект
+                </a>
+            </header>
+            <!--Тут надо сделать так, что показываестя тогда, когда есть уведомления. Пока просто заглушка.-->
+            <section class="invitations">
+                <h2>Входящие приглашения (1)</h2>
+                <article class="invite">
+                    <div class="invitation-info">
+                        <header class="invitation-header">
+                            <h3>StudentTracker</h3>
+                            <span class="role">Роль: Тестировщик</span>
+                        </header>
+                        <p>Приглашение от руководителя @dmitry_lead на роль Тестировщика.</p>
+                        <small>Срок действия: 7 дней</small>
+                    </div>
+
+                    <div class="actions">
+                        <button class="button decline" type="button">Отклонить</button>
+                        <a class="button" href="#">Принять</a>
+                    </div>
+                </article>
+            </section>
+            <!--Тут надо сделать так, что показываестя тогда, когда есть уведомления. Пока просто заглушка.-->
+
+            <section class="projects">
+                <h2>Активные проекты</h2>
+                <article class="project-card">
+                    <header class="project-header">
+                        <h3>StudentTracker132</h3>
+                        <div class="project-roles">
+                            <span class="role">Руководитель</span>
+                            <span class="role">Разработчик</span>
+                        </div>
+                    </header>
+
+                    <p>Система учета и отслеживания ошибок в программном обеспечении учебных проектов.</p>
+                    <p class="repo-info">Git Remote: https://github.com/edu-team/student-tracker.git | Релиз: v0.1.0-alpha</p>
+
+                    <footer class="project-footer">
+                        <small>Команда: 4 человека | Тикетов: 18</small>
+                        <a href="#">Перейти к тикетам →</a>
+                    </footer>
+                </article>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
+

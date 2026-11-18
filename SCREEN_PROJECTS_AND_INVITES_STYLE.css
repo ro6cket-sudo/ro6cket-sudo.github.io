@@ -1,0 +1,282 @@
+@font-face {
+    font-family: "Roboto Mono";
+    src: url("fonts/roboto-mono-regular.ttf");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Roboto Mono";
+    src: url("fonts/roboto-mono-bold.ttf");
+    font-weight: 700;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #141414;
+    color: #ffffff;
+    font: 11px/15px "Roboto Mono", monospace;
+    box-shadow: inset 0 0 0 1px #383838;
+}
+
+h1, h2, h3, p {
+    margin: 0;
+}
+
+h1 {
+    font-size: 15px;
+    line-height: 20px;
+}
+
+h2 {
+    margin-bottom: 2px;
+    padding: 5px 0;
+    color: #888888;
+    font-size: 10px;
+    line-height: 13px;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-size: 13px;
+    line-height: 18px;
+}
+
+small {
+    color: #666666;
+    font-size: 10px;
+    line-height: 13px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:focus-visible, button:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 2px;
+}
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 36px;
+    padding: 2px 14px 0;
+    background: #1c1c1c;
+    color: #e0e0e0;
+    box-shadow: inset 0 0 0 1px #383838;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 240px minmax(0, 1fr);
+    min-height: calc(100vh - 36px);
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    padding: 22px 15px 13px;
+}
+
+.logo {
+    display: grid;
+    gap: 1px;
+    margin-left: 5px;
+}
+
+.logo strong {
+    font-size: 13px;
+    line-height: 17px;
+}
+
+.logo small {
+    color: #777777;
+}
+
+.sidebar nav {
+    margin: 27px 0 16px;
+}
+
+.sidebar nav a {
+    display: block;
+    padding: 8.5px 13px;
+    background: #282828;
+    font-weight: bold;
+}
+
+.profile {
+    margin-top: auto;
+    min-height: 42px;
+    padding: 10px;
+    border: 1px solid #333333;
+    border-radius: 4px;
+    background: #1a1a1a;
+    color: #e0e0e0;
+    font-weight: bold;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+    padding: 7px 42px 24px 25px;
+}
+
+.content-header, .invite, .project-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 30px;
+    padding: 0 12px;
+    border: 0;
+    border-radius: 4px;
+    background: #e5e5e5;
+    color: #0a0a0a;
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.create-project {
+    width: 180px;
+    min-height: 36px;
+}
+
+.decline {
+    border: 1px solid #555555;
+    background: #222222;
+    color: #e5e5e5;
+}
+
+.button:hover {
+    filter: brightness(1.15);
+}
+
+.invite, .project-card {
+    background: #1c1c1c;
+    box-shadow: inset 0 0 0 1px #444444;
+    color: #aaaaaa;
+}
+
+.invite {
+    min-height: 95px;
+    padding: 8px 40px 8px 20px;
+    border-radius: 4px;
+}
+
+.invitation-info {
+    display: grid;
+    gap: 6px;
+    max-width: 375px;
+}
+
+.invitation-header, .project-header, .project-roles {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 10px;
+    color: #ffffff;
+}
+
+.role {
+    padding: 4px 16px;
+    border: 1px solid #4a4a4a;
+    border-radius: 4px;
+    background: #262626;
+    color: #d4d4d4;
+    font-size: 10px;
+    line-height: 13px;
+    font-weight: bold;
+}
+
+.invitation-header .role {
+    padding: 3.5px 19px;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.actions .button {
+    min-width: 100px;
+}
+
+.project-card {
+    position: relative;
+    display: grid;
+    align-content: start;
+    gap: 5px;
+    min-height: 130px;
+    padding: 12px 40px 10px 20px;
+}
+
+.project-header {
+    align-items: flex-start;
+    gap: 6px 12px;
+}
+
+.project-header h3 {
+    font-size: 14px;
+}
+
+.project-roles {
+    gap: 4px;
+}
+
+.project-card > p {
+    padding: 4px 0;
+}
+
+.project-card .repo-info {
+    padding: 6px 10px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    background: #121212;
+    color: #888888;
+    font-size: 10px;
+    line-height: 12px;
+    overflow-wrap: anywhere;
+}
+
+.project-footer {
+    min-height: 21px;
+    margin-right: 40px;
+    flex-wrap: wrap;
+}
+
+.project-footer a {
+    color: white;
+    font-weight: bold;
+}
+
+.project-footer a:hover {
+    text-decoration: underline;
+}
+
+.project-footer a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+}
+
+.response-status {
+    padding: 14px 20px;
+    background: #1c1c1c;
+    color: #aaaaaa;
+}
