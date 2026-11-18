@@ -1,17 +1,21 @@
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddOpenApi();
+
+builder.Services.AddControllers();
 var app = builder.Build();
+app.MapControllers();
 
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
-var app = builder.Build();
-
+app.MapGet("/", () => new { Title = "Student Tracker" });
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    app.MapOpenApi();
+    app.MapOpenApi("/swagger/{documentName}/swagger.json");
+    app.UseSwaggerUI(options =>
+    {
+        options.RoutePrefix = "swagger";
+    });
 }
 
-app.MapGet("/", () => "Student Tracker App");
 
 app.Run();
