@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="SCREEN_PROJECTS_AND_INVITES_STYLE.css">
+</head>
+<body>
+    <header class="top-bar">
+            <span class="window-dots">
+                <svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path id="Circle" d="M8 4C8 1.79086 6.20914 0 4 0C1.79086 0 0 1.79086 0 4C0 6.20914 1.79086 8 4 8C6.20914 8 8 6.20914 8 4Z" fill="#4A4A4A"/>
+                </svg>
+                <svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path id="Circle" d="M8 4C8 1.79086 6.20914 0 4 0C1.79086 0 0 1.79086 0 4C0 6.20914 1.79086 8 4 8C6.20914 8 8 6.20914 8 4Z" fill="#4A4A4A"/>
+                </svg>
+                <svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path id="Circle" d="M8 4C8 1.79086 6.20914 0 4 0C1.79086 0 0 1.79086 0 4C0 6.20914 1.79086 8 4 8C6.20914 8 8 6.20914 8 4Z" fill="#4A4A4A"/>
+                </svg>
+            </span>
+        <span class="window-title">Мои проекты и приглашения</span>
+    </header>
+
+    <div class="main">
+        <aside class="sidebar card-sidebar">
+            <div class="logo">
+                <strong class="logo-title">StudentTracker</strong>
+                <small class="logo-subtitle">Баг-трекер</small>
+            </div>
+            <nav class="navigation">
+                <a class="nav-link current-page" href="SCREEN_TICKET_CARD.html">[•] Карточка тикета</a>
+                <a class="nav-link" href="SCREEN_TICKET_REGISTRY.html">[ ] К списку тикетов</a>
+                <a class="nav-link" href="#">[ ] Настройки проекта</a>
+            </nav>
+            <p class="profile">@dmitry_lead</p>
+        </aside>
+        <main class="content">
+            <div class="card-columns">
+                <article class="details-panel">
+                    <header class="ticket-summary">
+                        <strong class="ticket-number">#BUG-104</strong>
+                        <span class="badge">В работе</span>
+                        <span class="muted">Автор: @tester_olga · v0.1.0-alpha</span>
+                    </header>
+                    <div>
+                        <h1 class="ticket-title">Крах приложения при отправке пустой формы</h1>
+                        <p class="exception">(NullReferenceException)</p>
+                    </div>
+                    <section class="detail-block sample-detail">
+                        <h2 class="detail-label">ШАГИ ВОСПРОИЗВЕДЕНИЯ:</h2>
+                        <div class="detail-box">
+                            <p class="detail-line">1. Открыть страницу тикета #BUG-101.</p>
+                            <p class="detail-line">2. Нажать «Отправить», оставив поле комментария пустым.</p>
+                            <p class="detail-line">Фактический: ошибка 500 в DevTools, интерфейс зависает.</p>
+                            <p class="detail-line">Ожидаемый: подсветка поля и сообщение «Поле обязательно».</p>
+                        </div>
+                    </section>
+                    <section class="detail-block sample-detail">
+                        <h2 class="detail-label">ЛОГИ И ВЛОЖЕНИЯ:</h2>
+                        <div class="detail-box">
+                            <p class="detail-line">System.NullReferenceException at CommentController.Post()</p>
+                            <p class="detail-line">📎 crash_screenshot.png (420 KB)</p>
+                        </div>
+                    </section>
+                    <section class="detail-block sample-detail">
+                        <h2 class="detail-label">ССЫЛКИ НА MR И КОММИТЫ:</h2>
+                        <div class="detail-box">
+                            <p class="detail-line">MR: pull/14 fix(comment)</p>
+                            <p class="detail-line">Коммит: b4a7d1e</p>
+                        </div>
+                    </section>
+                    <section class="detail-block discussion">
+                        <h2 class="detail-label">ОБСУЖДЕНИЕ (2):</h2>
+                        <div class="detail-box">
+                            <p class="detail-line">@tester_olga (Тестировщик) · 08.10 14:10</p>
+                            <p class="detail-line">Баг воспроизводится стабильно на стенде dev-stage.</p>
+                            <p class="detail-line">@alex_dev (Разработчик) · 08.10 14:25</p>
+                            <p class="detail-line">Взял в работу. Добавлю проверку на null в CommentController.</p>
+                        </div>
+                    </section>
+                    <form class="comment-form">
+                        <label class="detail-label">НОВЫЙ КОММЕНТАРИЙ:
+                            <textarea class="comment-input" required placeholder="Введите текст комментария… Для упоминания — @имя"></textarea>
+                        </label>
+                        <small class="file-note">Файлы до 10 МБ</small>
+                        <div class="comment-actions">
+                            <label class="button dark file-button">📎 Файл<input class="file-input" type="file">
+                            </label>
+                            <button class="button row-button" type="submit">Отправить</button>
+                        </div>
+                    </form>
+                </article>
+                <aside class="params-panel">
+                    <h2 class="detail-label">ПАРАМЕТРЫ ТИКЕТА</h2>
+                    <section class="detail-block assignee">
+                        <h2 class="detail-label">ИСПОЛНИТЕЛЬ:</h2>
+                        <div class="detail-box">
+                            <p class="detail-line">@alex_dev (Алексей С.)</p>
+                            <p class="detail-line">Основание: «Специалист по формам»</p>
+                        </div>
+                        <a class="button dark" href="#">Изменить</a>
+                    </section>
+                    <section class="detail-block priority">
+                        <h2 class="detail-label">ПРИОРИТЕТ:</h2>
+                        <div class="detail-box">
+                            <p class="detail-line">High</p>
+                            <p class="detail-line">Основание: «Блокирует приёмку»</p>
+                        </div>
+                        <a class="button dark" href="#">Изменить</a>
+                    </section>
+                    <section class="detail-block deadline">
+                        <h2 class="detail-label">ДЕДЛАЙН:</h2>
+                        <div class="detail-box">
+                            <p class="detail-line">25.10.2026</p>
+                            <p class="detail-line">Назначил @alex_dev (исполнитель)</p>
+                        </div>
+                        <a class="button dark" href="#">Изменить</a>
+                    </section>
+                    <section class="detail-block status-actions">
+                        <h2 class="detail-label">ДЕЙСТВИЯ ПО СТАТУСУ «В РАБОТЕ»:</h2>
+                        <div class="detail-box">
+                            <p class="detail-line">Отправить на ревью может только</p>
+                            <p class="detail-line">исполнитель @alex_dev.</p>
+                        </div>
+                    </section>
+                </aside>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
