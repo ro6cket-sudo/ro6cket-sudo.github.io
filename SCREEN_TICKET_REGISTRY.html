@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>screen projects and invites</title>
+    <link rel="stylesheet" href="SCREEN_PROJECTS_AND_INVITES_STYLE.css">
+</head>
+<body>
+<header class="top-bar">
+        <span class="window-dots">
+            <svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path id="Circle" d="M8 4C8 1.79086 6.20914 0 4 0C1.79086 0 0 1.79086 0 4C0 6.20914 1.79086 8 4 8C6.20914 8 8 6.20914 8 4Z" fill="#4A4A4A"/>
+            </svg>
+            <svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path id="Circle" d="M8 4C8 1.79086 6.20914 0 4 0C1.79086 0 0 1.79086 0 4C0 6.20914 1.79086 8 4 8C6.20914 8 8 6.20914 8 4Z" fill="#4A4A4A"/>
+            </svg>
+            <svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path id="Circle" d="M8 4C8 1.79086 6.20914 0 4 0C1.79086 0 0 1.79086 0 4C0 6.20914 1.79086 8 4 8C6.20914 8 8 6.20914 8 4Z" fill="#4A4A4A"/>
+            </svg>
+        </span>
+    <span class="window-title">Реестр тикетов проекта</span>
+</header>
+
+<div class="main">
+    <aside class="sidebar">
+        <div class="logo">
+            <strong class="logo-title">StudentTracker</strong>
+            <span class="logo-subtitle">Баг-трекер</span>
+        </div>
+
+        <nav class="navigation">
+            <a class="nav-link current-page" href="SCREEN_TICKET_REGISTRY.html.html">[•] Список тикетов</a>
+            <a class="nav-link" href="SCREEN_PROJECTS_AND_INVITES.html">[ ] Настройки проекта</a>
+            <a class="nav-link" href="SCREEN_PROJECTS_AND_INVITES.html.html">← Вернуться</a>
+        </nav>
+
+        <p class="profile">
+            @student132
+        </p>
+    </aside>
+
+    <main class="content">
+        <header class="content-header">
+            <h1 class="page-title">
+                Реестр тикетов проекта
+            </h1>
+            <a class="button create-project" type="button" href="#">
+                + Создать тикет
+            </a>
+        </header>
+
+        <div class="toolbar">
+            <span class="toolbar-title">Фильтры и поиск:</span>
+            <input class="filed search" type="search" placeholder="Поиск по названию...">
+            <select class="field status-filter">
+                <option value="">Статус: Все</option>
+                <option>Новый</option>
+                <option>В работе</option>
+                <option>На ревью</option>
+            </select>
+            <select class="field priority-filter">
+                <option value="">Приоритет: Все</option>
+                <option>Critical</option>
+                <option>High</option>
+                <option>Medium</option>
+                <option>Low</option>
+            </select>
+            <select class="field assignee-filter">
+                <option value="">Исполнитель: Все</option>
+                <option>Не назначен</option>
+            </select>
+        </div>
+        <!--Тут надо сделать так, что показываестя тогда, когда есть уведомления. Пока просто заглушка.-->
+        <section class="table-panel">
+            <div class="table-scroll" tabindex="0" aria-label="Название тикета">
+                <table class="records ticket-table">
+                    <thead>
+                    <tr>
+                        <th class="column number-column" scope="col">ID</th>
+                        <th class="column title-column" scope="col">Название тикета</th>
+                        <th class="column status-column" scope="col">Статус</th>
+                        <th class="column priority-column" scope="col">Приоритет</th>
+                        <th class="column person-column" scope="col">Исполнитель</th>
+                        <th class="column deadline-column" scope="col">Дедлайн</th>
+                        <th class="column action-column" scope="col">Действие</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="record">
+                        <td class="cell number-cell">
+                            <b>#BUG-101</b>
+                        </td>
+                        <td class="cell">
+                            <strong class="row-title">Ошибка 403 Forbidden при загрузке аватара</strong>
+                            <small class="row-subtitle">Автор: @tester_olga</small>
+                        </td>
+                        <td class="cell">
+                            <span class="badge">Новый</span>
+                        </td>
+                        <td class="cell">Critical</td>
+                        <td class="cell">Не назначен</td>
+                        <td class="cell">18.10.2026</td>
+                        <td class="cell">
+                            <a class="button row-button" href="SCREEN_TICKET_CARD.html?ticket=101">Взять в работу</a>
+                        </td>
+                    </tr>
+                    <tr class="record alternate">
+                        <td class="cell number-cell">
+                            <b>#BUG-104</b>
+                        </td>
+                        <td class="cell">
+                            <strong class="row-title">Крах приложения при отправке пустой формы</strong>
+                            <small class="row-subtitle">Автор: @tester_olga</small>
+                        </td>
+                        <td class="cell">
+                            <span class="badge">В работе</span>
+                        </td>
+                        <td class="cell">High</td>
+                        <td class="cell">@alex_dev</td>
+                        <td class="cell">25.10.2026</td>
+                        <td class="cell">
+                            <a class="button row-button" href="SCREEN_TICKET_CARD.html?ticket=104">Открыть →</a>
+                        </td>
+                    </tr>
+                    <tr class="record">
+                        <td class="cell number-cell">
+                            <b>#BUG-102</b>
+                        </td>
+                        <td class="cell">
+                            <strong class="row-title">Сдвиг верстки боковой панели на экранах &lt; 1024</strong>
+                            <small class="row-subtitle">Автор: @tester_olga</small>
+                        </td>
+                        <td class="cell">
+                            <span class="badge">В работе</span>
+                        </td>
+                        <td class="cell">Medium</td>
+                        <td class="cell">@elena_dev</td>
+                        <td class="cell">22.10.2026</td>
+                        <td class="cell">
+                            <a class="button row-button" href="SCREEN_TICKET_CARD.html?ticket=102">Открыть →</a>
+                        </td>
+                    </tr>
+                    <tr class="record alternate">
+                        <td class="cell number-cell">
+                            <b>#BUG-103</b>
+                        </td>
+                        <td class="cell">
+                            <strong class="row-title">Таймаут сокета при пакетной синхронизации</strong>
+                            <small class="row-subtitle">Автор: @tester_olga</small>
+                        </td>
+                        <td class="cell">
+                            <span class="badge">На ревью</span>
+                        </td>
+                        <td class="cell">High</td>
+                        <td class="cell">@alex_dev</td>
+                        <td class="cell">20.10.2026</td>
+                        <td class="cell">
+                            <a class="button row-button dark" href="SCREEN_TICKET_CARD.html?ticket=103">Открыть</a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <footer class="table-footer">
+                <span class="result-count" role="status">Показано 1–4 из 18 тикетов</span>
+                <span>Страницы: [1] 2</span>
+            </footer>
+        </section>
+    </main>
+</div>
+
+
+<script src="./SCREEN_PROJECTS_AND_INVITES_SCRIPT.js"></script>
+</body>
+</html>
+
