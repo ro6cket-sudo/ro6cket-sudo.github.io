@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>screen projects and invites</title>
+    <title>Мои проекты и приглашения — StudentTracker</title>
     <link rel="stylesheet" href="SCREEN_PROJECTS_AND_INVITES_STYLE.css">
     <link rel="stylesheet" href="common.css">
 </head>
@@ -33,9 +33,7 @@
                 <a class="nav-link current-page" href="SCREEN_PROJECTS_AND_INVITES.html">[•] Мои проекты</a>
             </nav>
 
-            <p class="profile">
-                @student132
-            </p>
+            <p class="profile" id="profile-username">@...</p>
         </aside>
 
         <main class="content">
@@ -43,58 +41,64 @@
                 <h1 class="page-title">
                     Список проектов и приглашений
                 </h1>
-                <a class="button create-project" type="button" href="#">
+                <button class="button create-project" id="open-create-project" type="button">
                     + Создать проект
-                </a>
+                </button>
             </header>
-            <!--Тут надо сделать так, что показываестя тогда, когда есть уведомления. Пока просто заглушка.-->
-            <section class="invitations">
-                <h2>Входящие приглашения (1)</h2>
-                <article class="invite">
-                    <div class="invitation-info">
-                        <header class="invitation-header">
-                            <h3>StudentTracker</h3>
-                            <span class="role">Роль: Тестировщик</span>
-                        </header>
-                        <footer class="invite-footer">
-                            <p>Приглашение от руководителя @dmitry_lead на роль Тестировщика.</p>
-                            <small>Срок действия: 7 дней</small>
-                        </footer>
-                    </div>
 
-                    <div class="actions">
-                        <button class="button decline" type="button">Отклонить</button>
-                        <a class="button" href="#">Принять</a>
-                    </div>
-                </article>
+            <section class="invitations" id="invitations-section" hidden>
+                <h2 id="invitations-title">Входящие приглашения (0)</h2>
+                <div id="invitations-list"></div>
             </section>
-            <!--Тут надо сделать так, что показываестя тогда, когда есть уведомления. Пока просто заглушка.-->
 
             <section class="projects">
                 <h2>Активные проекты</h2>
-                <article class="project-card">
-                    <header class="project-header">
-                        <h3>StudentTracker132</h3>
-                        <div class="project-roles">
-                            <span class="role">Руководитель</span>
-                            <span class="role">Разработчик</span>
-                        </div>
-                    </header>
-
-                    <p>Система учета и отслеживания ошибок в программном обеспечении учебных проектов.</p>
-                    <p class="repo-info">Git Remote: https://github.com/edu-team/student-tracker.git | Релиз: v0.1.0-alpha</p>
-
-                    <footer class="project-footer">
-                        <small>Команда: 4 человека | Тикетов: 18</small>
-                        <a href="#">Перейти к тикетам →</a>
-                    </footer>
-                </article>
+                <div id="projects-list">
+                    <p class="response-status">Загрузка проектов...</p>
+                </div>
             </section>
-        </mai>
-    </main>
+        </main>
+    </div>
 
+    <dialog class="modal-dialog" id="create-project-dialog">
+        <div class="modal-header">
+            <h3>Новый проект</h3>
+            <button class="button dark" id="close-create-project" type="button">✕</button>
+        </div>
+        <form class="modal-form" id="create-project-form">
+            <label class="modal-field">
+                Название проекта *
+                <input class="field" name="name" type="text" required placeholder="Например: StudyHelper">
+            </label>
+            <label class="modal-field">
+                Описание
+                <textarea class="field" name="description" placeholder="Краткое описание учебного проекта"></textarea>
+            </label>
+            <label class="modal-field">
+                Версия ПО *
+                <input class="field" name="softwareVersion" type="text" required value="v0.1.0">
+            </label>
+            <label class="modal-field">
+                Git Remote URL *
+                <input class="field" name="gitRemoteUrl" type="url" required value="https://github.com/edu/new-project.git">
+            </label>
+            <div class="modal-field">
+                Ваши роли в проекте:
+                <div class="modal-checkboxes">
+                    <label><input type="checkbox" name="roles" value="Leader" checked> Руководитель</label>
+                    <label><input type="checkbox" name="roles" value="Developer" checked> Разработчик</label>
+                    <label><input type="checkbox" name="roles" value="Tester"> Тестировщик</label>
+                </div>
+            </div>
+            <p class="form-error" id="create-project-error" hidden></p>
+            <div class="modal-actions">
+                <button class="button dark" id="cancel-create-project" type="button">Отмена</button>
+                <button class="button" type="submit">Создать</button>
+            </div>
+        </form>
+    </dialog>
 
-<script src="./SCREEN_PROJECTS_AND_INVITES_SCRIPT.js"></script>
+    <script src="./api.js"></script>
+    <script src="./SCREEN_PROJECTS_AND_INVITES_SCRIPT.js"></script>
 </body>
 </html>
-

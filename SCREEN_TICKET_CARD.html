@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Карточка тикета — StudentTracker</title>
     <link rel="stylesheet" href="SCREEN_PROJECTS_AND_INVITES_STYLE.css">
     <link rel="stylesheet" href="common.css">
 </head>
 <body>
     <header class="top-bar">
-            <span class="window-dots">
-                <svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path id="Circle" d="M8 4C8 1.79086 6.20914 0 4 0C1.79086 0 0 1.79086 0 4C0 6.20914 1.79086 8 4 8C6.20914 8 8 6.20914 8 4Z" fill="#4A4A4A"/>
-                </svg>
-                <svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path id="Circle" d="M8 4C8 1.79086 6.20914 0 4 0C1.79086 0 0 1.79086 0 4C0 6.20914 1.79086 8 4 8C6.20914 8 8 6.20914 8 4Z" fill="#4A4A4A"/>
-                </svg>
-                <svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path id="Circle" d="M8 4C8 1.79086 6.20914 0 4 0C1.79086 0 0 1.79086 0 4C0 6.20914 1.79086 8 4 8C6.20914 8 8 6.20914 8 4Z" fill="#4A4A4A"/>
-                </svg>
-            </span>
-        <span class="window-title">Мои проекты и приглашения</span>
+        <span class="window-dots">
+            <svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path id="Circle" d="M8 4C8 1.79086 6.20914 0 4 0C1.79086 0 0 1.79086 0 4C0 6.20914 1.79086 8 4 8C6.20914 8 8 6.20914 8 4Z" fill="#4A4A4A"/>
+            </svg>
+            <svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path id="Circle" d="M8 4C8 1.79086 6.20914 0 4 0C1.79086 0 0 1.79086 0 4C0 6.20914 1.79086 8 4 8C6.20914 8 8 6.20914 8 4Z" fill="#4A4A4A"/>
+            </svg>
+            <svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path id="Circle" d="M8 4C8 1.79086 6.20914 0 4 0C1.79086 0 0 1.79086 0 4C0 6.20914 1.79086 8 4 8C6.20914 8 8 6.20914 8 4Z" fill="#4A4A4A"/>
+            </svg>
+        </span>
+        <span class="window-title" id="window-title">Карточка тикета</span>
     </header>
 
     <div class="main">
@@ -29,104 +29,141 @@
                 <small class="logo-subtitle">Баг-трекер</small>
             </div>
             <nav class="navigation">
-                <a class="nav-link current-page" href="SCREEN_TICKET_CARD.html">[•] Карточка тикета</a>
-                <a class="nav-link" href="SCREEN_TICKET_REGISTRY.html">[ ] К списку тикетов</a>
-                <a class="nav-link" href="#">[ ] Настройки проекта</a>
+                <a class="nav-link current-page" id="nav-current-card" href="#">[•] Карточка тикета</a>
+                <a class="nav-link" id="back-to-registry" href="SCREEN_TICKET_REGISTRY.html">[ ] К списку тикетов</a>
+                <a class="nav-link" href="SCREEN_PROJECTS_AND_INVITES.html">[ ] Мои проекты</a>
             </nav>
-            <p class="profile">@dmitry_lead</p>
+            <p class="profile" id="profile-username">@...</p>
         </aside>
+
         <main class="content">
+            <p class="response-status" id="card-status-banner" hidden></p>
+
             <div class="card-columns">
                 <article class="details-panel">
                     <header class="ticket-summary">
-                        <strong class="ticket-number">#BUG-104</strong>
-                        <span class="badge">В работе</span>
-                        <span class="muted">Автор: @tester_olga · v0.1.0-alpha</span>
+                        <strong class="ticket-number" id="ticket-number">#BUG-...</strong>
+                        <span class="badge" id="ticket-status">Загрузка...</span>
+                        <span class="muted" id="ticket-meta">Автор: ...</span>
                     </header>
                     <div>
-                        <h1 class="ticket-title">Крах приложения при отправке пустой формы</h1>
-                        <p class="exception">(NullReferenceException)</p>
+                        <h1 class="ticket-title" id="ticket-title">Загрузка тикета...</h1>
                     </div>
                     <section class="detail-block sample-detail">
                         <h2 class="detail-label">ШАГИ ВОСПРОИЗВЕДЕНИЯ:</h2>
-                        <div class="detail-box">
-                            <p class="detail-line">1. Открыть страницу тикета #BUG-101.</p>
-                            <p class="detail-line">2. Нажать «Отправить», оставив поле комментария пустым.</p>
-                            <p class="detail-line">Фактический: ошибка 500 в DevTools, интерфейс зависает.</p>
-                            <p class="detail-line">Ожидаемый: подсветка поля и сообщение «Поле обязательно».</p>
-                        </div>
+                        <div class="detail-box" id="ticket-steps"></div>
                     </section>
                     <section class="detail-block sample-detail">
                         <h2 class="detail-label">ЛОГИ И ВЛОЖЕНИЯ:</h2>
-                        <div class="detail-box">
-                            <p class="detail-line">System.NullReferenceException at CommentController.Post()</p>
-                            <p class="detail-line">📎 crash_screenshot.png (420 KB)</p>
-                        </div>
+                        <div class="detail-box" id="ticket-attachments"></div>
                     </section>
                     <section class="detail-block sample-detail">
-                        <h2 class="detail-label">ССЫЛКИ НА MR И КОММИТЫ:</h2>
-                        <div class="detail-box">
-                            <p class="detail-line">MR: pull/14 fix(comment)</p>
-                            <p class="detail-line">Коммит: b4a7d1e</p>
-                        </div>
+                        <h2 class="detail-label">ИСТОРИЯ ИЗМЕНЕНИЙ:</h2>
+                        <div class="detail-box" id="ticket-history"></div>
                     </section>
                     <section class="detail-block discussion">
-                        <h2 class="detail-label">ОБСУЖДЕНИЕ (2):</h2>
-                        <div class="detail-box">
-                            <p class="detail-line">@tester_olga (Тестировщик) · 08.10 14:10</p>
-                            <p class="detail-line">Баг воспроизводится стабильно на стенде dev-stage.</p>
-                            <p class="detail-line">@alex_dev (Разработчик) · 08.10 14:25</p>
-                            <p class="detail-line">Взял в работу. Добавлю проверку на null в CommentController.</p>
-                        </div>
+                        <h2 class="detail-label" id="comments-title">ОБСУЖДЕНИЕ (0):</h2>
+                        <div class="detail-box" id="ticket-comments"></div>
                     </section>
-                    <form class="comment-form">
+                    <form class="comment-form" id="comment-form">
                         <label class="detail-label">НОВЫЙ КОММЕНТАРИЙ:
-                            <textarea class="comment-input" required placeholder="Введите текст комментария… Для упоминания — @имя"></textarea>
+                            <textarea class="field comment-input" id="comment-text" required placeholder="Введите текст комментария… Для упоминания — @имя"></textarea>
                         </label>
-                        <small class="file-note">Файлы до 10 МБ</small>
+                        <small class="file-note" id="selected-files-note">Имена выбранных файлов передаются строкой (без загрузки бинарников)</small>
                         <div class="comment-actions">
-                            <label class="button dark file-button">📎 Файл<input class="file-input" type="file">
+                            <label class="button dark file-button">📎 Файл<input class="file-input" id="comment-files" type="file" multiple hidden>
                             </label>
                             <button class="button row-button" type="submit">Отправить</button>
                         </div>
                     </form>
                 </article>
+
                 <aside class="params-panel">
                     <h2 class="detail-label">ПАРАМЕТРЫ ТИКЕТА</h2>
                     <section class="detail-block assignee">
                         <h2 class="detail-label">ИСПОЛНИТЕЛЬ:</h2>
-                        <div class="detail-box">
-                            <p class="detail-line">@alex_dev (Алексей С.)</p>
-                            <p class="detail-line">Основание: «Специалист по формам»</p>
+                        <div class="detail-box" id="ticket-assignee-box">
+                            <p class="detail-line">Не назначен</p>
                         </div>
-                        <a class="button dark" href="#">Изменить</a>
+                        <button class="button dark" id="open-assign-dialog" type="button">Изменить</button>
                     </section>
                     <section class="detail-block priority">
                         <h2 class="detail-label">ПРИОРИТЕТ:</h2>
-                        <div class="detail-box">
-                            <p class="detail-line">High</p>
-                            <p class="detail-line">Основание: «Блокирует приёмку»</p>
+                        <div class="detail-box" id="ticket-priority-box">
+                            <p class="detail-line">—</p>
                         </div>
-                        <a class="button dark" href="#">Изменить</a>
+                        <button class="button dark" type="button" disabled title="Редактирование приоритета пока не поддерживается API">Изменить</button>
                     </section>
                     <section class="detail-block deadline">
                         <h2 class="detail-label">ДЕДЛАЙН:</h2>
-                        <div class="detail-box">
-                            <p class="detail-line">25.10.2026</p>
-                            <p class="detail-line">Назначил @alex_dev (исполнитель)</p>
+                        <div class="detail-box" id="ticket-deadline-box">
+                            <p class="detail-line">Не задан</p>
                         </div>
-                        <a class="button dark" href="#">Изменить</a>
+                        <button class="button dark" type="button" disabled title="Редактирование дедлайна пока не поддерживается API">Изменить</button>
                     </section>
                     <section class="detail-block status-actions">
-                        <h2 class="detail-label">ДЕЙСТВИЯ ПО СТАТУСУ «В РАБОТЕ»:</h2>
-                        <div class="detail-box">
-                            <p class="detail-line">Отправить на ревью может только</p>
-                            <p class="detail-line">исполнитель @alex_dev.</p>
-                        </div>
+                        <h2 class="detail-label" id="status-actions-title">ДЕЙСТВИЯ ПО СТАТУСУ:</h2>
+                        <div class="detail-box" id="status-actions-box"></div>
                     </section>
                 </aside>
             </div>
         </main>
     </div>
+
+    <dialog class="modal-dialog" id="assign-dialog">
+        <div class="modal-header">
+            <h3>Назначить исполнителя</h3>
+            <button class="button dark" id="close-assign-dialog" type="button">✕</button>
+        </div>
+        <form class="modal-form" id="assign-form">
+            <label class="modal-field">
+                Исполнитель
+                <select class="field" name="assigneeId" id="assign-member-select">
+                    <option value="">Снять исполнителя (Новый)</option>
+                </select>
+            </label>
+            <label class="modal-field">
+                Основание / комментарий
+                <input class="field" name="reason" type="text" placeholder="Например: Специалист по формам">
+            </label>
+            <div class="modal-actions">
+                <button class="button dark" id="cancel-assign-dialog" type="button">Отмена</button>
+                <button class="button" type="submit">Сохранить</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog class="modal-dialog" id="review-dialog">
+        <div class="modal-header">
+            <h3>Отправить на ревью</h3>
+            <button class="button dark" id="close-review-dialog" type="button">✕</button>
+        </div>
+        <form class="modal-form" id="review-form">
+            <label class="modal-field">
+                Резолюция *
+                <select class="field" name="resolution" required>
+                    <option value="Fixed">Fixed (Исправлено)</option>
+                    <option value="NotABug">NotABug (Не баг)</option>
+                    <option value="Duplicate">Duplicate (Дубликат)</option>
+                    <option value="CannotReproduce">CannotReproduce (Не воспроизводится)</option>
+                </select>
+            </label>
+            <label class="modal-field">
+                Ссылка на Merge Request
+                <input class="field" name="mergeRequestUrl" type="text" placeholder="pull/14">
+            </label>
+            <label class="modal-field">
+                Обоснование
+                <textarea class="field" name="justification" placeholder="Кратко что исправлено"></textarea>
+            </label>
+            <div class="modal-actions">
+                <button class="button dark" id="cancel-review-dialog" type="button">Отмена</button>
+                <button class="button" type="submit">Отправить на ревью</button>
+            </div>
+        </form>
+    </dialog>
+
+    <script src="./api.js"></script>
+    <script src="./SCREEN_TICKET_CARD_SCRIPT.js"></script>
 </body>
 </html>

@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>screen projects and invites</title>
+    <title>Реестр тикетов проекта — StudentTracker</title>
     <link rel="stylesheet" href="SCREEN_PROJECTS_AND_INVITES_STYLE.css">
     <link rel="stylesheet" href="common.css">
 </head>
 <body>
 <header class="top-bar">
-        <span class="window-dots">
-            <svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path id="Circle" d="M8 4C8 1.79086 6.20914 0 4 0C1.79086 0 0 1.79086 0 4C0 6.20914 1.79086 8 4 8C6.20914 8 8 6.20914 8 4Z" fill="#4A4A4A"/>
-            </svg>
-            <svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path id="Circle" d="M8 4C8 1.79086 6.20914 0 4 0C1.79086 0 0 1.79086 0 4C0 6.20914 1.79086 8 4 8C6.20914 8 8 6.20914 8 4Z" fill="#4A4A4A"/>
-            </svg>
-            <svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path id="Circle" d="M8 4C8 1.79086 6.20914 0 4 0C1.79086 0 0 1.79086 0 4C0 6.20914 1.79086 8 4 8C6.20914 8 8 6.20914 8 4Z" fill="#4A4A4A"/>
-            </svg>
-        </span>
-    <span class="window-title">Реестр тикетов проекта</span>
+    <span class="window-dots">
+        <svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path id="Circle" d="M8 4C8 1.79086 6.20914 0 4 0C1.79086 0 0 1.79086 0 4C0 6.20914 1.79086 8 4 8C6.20914 8 8 6.20914 8 4Z" fill="#4A4A4A"/>
+        </svg>
+        <svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path id="Circle" d="M8 4C8 1.79086 6.20914 0 4 0C1.79086 0 0 1.79086 0 4C0 6.20914 1.79086 8 4 8C6.20914 8 8 6.20914 8 4Z" fill="#4A4A4A"/>
+        </svg>
+        <svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path id="Circle" d="M8 4C8 1.79086 6.20914 0 4 0C1.79086 0 0 1.79086 0 4C0 6.20914 1.79086 8 4 8C6.20914 8 8 6.20914 8 4Z" fill="#4A4A4A"/>
+        </svg>
+    </span>
+    <span class="window-title" id="window-title">Реестр тикетов проекта</span>
 </header>
 
 <div class="main">
@@ -30,47 +30,46 @@
         </div>
 
         <nav class="navigation">
-            <a class="nav-link current-page" href="SCREEN_TICKET_REGISTRY.html.html">[•] Список тикетов</a>
-            <a class="nav-link" href="SCREEN_PROJECTS_AND_INVITES.html">[ ] Настройки проекта</a>
-            <a class="nav-link" href="SCREEN_PROJECTS_AND_INVITES.html.html">← Вернуться</a>
+            <a class="nav-link current-page" id="nav-registry" href="SCREEN_TICKET_REGISTRY.html">[•] Список тикетов</a>
+            <a class="nav-link" href="SCREEN_PROJECTS_AND_INVITES.html">← К списку проектов</a>
         </nav>
 
-        <p class="profile">
-            @student132
-        </p>
+        <p class="profile" id="profile-username">@...</p>
     </aside>
 
     <main class="content">
         <header class="content-header">
-            <h1 class="page-title">
+            <h1 class="page-title" id="registry-title">
                 Реестр тикетов проекта
             </h1>
-            <a class="button create-button" type="button" href="#">
+            <button class="button create-button" id="open-create-ticket" type="button">
                 + Создать тикет
-            </a>
+            </button>
         </header>
 
         <div class="toolbar">
             <span class="toolbar-title">Фильтры и поиск:</span>
-            <input class="filed search" type="search" placeholder="Поиск по названию...">
-            <select class="field status-filter">
+            <input class="field search" id="search-input" type="search" placeholder="Поиск по названию или #ID...">
+            <select class="field status-filter" id="status-filter">
                 <option value="">Статус: Все</option>
-                <option>Новый</option>
-                <option>В работе</option>
-                <option>На ревью</option>
+                <option value="New">Новый</option>
+                <option value="InProgress">В работе</option>
+                <option value="OnReview">На ревью</option>
+                <option value="Closed">Закрыт</option>
             </select>
-            <select class="field priority-filter">
+            <select class="field priority-filter" id="priority-filter">
                 <option value="">Приоритет: Все</option>
-                <option>Critical</option>
-                <option>High</option>
-                <option>Medium</option>
-                <option>Low</option>
+                <option value="Critical">Critical</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
             </select>
-            <select class="field assignee-filter">
+            <select class="field assignee-filter" id="assignee-filter">
                 <option value="">Исполнитель: Все</option>
-                <option>Не назначен</option>
+                <option value="unassigned">Не назначен</option>
             </select>
         </div>
+
         <section class="table-panel">
             <div class="table-scroll">
                 <table class="records ticket-table">
@@ -85,92 +84,60 @@
                         <th class="column action-column" scope="col">Действие</th>
                     </tr>
                     </thead>
-                    <tbody>
-                    <tr class="record">
-                        <td class="cell number-cell">
-                            <b>#BUG-101</b>
-                        </td>
-                        <td class="cell">
-                            <strong class="row-title">Ошибка 403 Forbidden при загрузке аватара</strong>
-                            <small class="row-subtitle">Автор: @tester_olga</small>
-                        </td>
-                        <td class="cell">
-                            <span class="badge">Новый</span>
-                        </td>
-                        <td class="cell">Critical</td>
-                        <td class="cell">Не назначен</td>
-                        <td class="cell">18.10.2026</td>
-                        <td class="cell">
-                            <a class="button row-button" href="SCREEN_TICKET_CARD.html?ticket=101">Взять в работу</a>
-                        </td>
-                    </tr>
-                    <tr class="record alternate">
-                        <td class="cell number-cell">
-                            <b>#BUG-104</b>
-                        </td>
-                        <td class="cell">
-                            <strong class="row-title">Крах приложения при отправке пустой формы</strong>
-                            <small class="row-subtitle">Автор: @tester_olga</small>
-                        </td>
-                        <td class="cell">
-                            <span class="badge">В работе</span>
-                        </td>
-                        <td class="cell">High</td>
-                        <td class="cell">@alex_dev</td>
-                        <td class="cell">25.10.2026</td>
-                        <td class="cell">
-                            <a class="button row-button" href="SCREEN_TICKET_CARD.html?ticket=104">Открыть →</a>
-                        </td>
-                    </tr>
-                    <tr class="record">
-                        <td class="cell number-cell">
-                            <b>#BUG-102</b>
-                        </td>
-                        <td class="cell">
-                            <strong class="row-title">Сдвиг верстки боковой панели на экранах &lt; 1024</strong>
-                            <small class="row-subtitle">Автор: @tester_olga</small>
-                        </td>
-                        <td class="cell">
-                            <span class="badge">В работе</span>
-                        </td>
-                        <td class="cell">Medium</td>
-                        <td class="cell">@elena_dev</td>
-                        <td class="cell">22.10.2026</td>
-                        <td class="cell">
-                            <a class="button row-button" href="SCREEN_TICKET_CARD.html?ticket=102">Открыть →</a>
-                        </td>
-                    </tr>
-                    <tr class="record alternate">
-                        <td class="cell number-cell">
-                            <b>#BUG-103</b>
-                        </td>
-                        <td class="cell">
-                            <strong class="row-title">Таймаут сокета при пакетной синхронизации</strong>
-                            <small class="row-subtitle">Автор: @tester_olga</small>
-                        </td>
-                        <td class="cell">
-                            <span class="badge">На ревью</span>
-                        </td>
-                        <td class="cell">High</td>
-                        <td class="cell">@alex_dev</td>
-                        <td class="cell">20.10.2026</td>
-                        <td class="cell">
-                            <a class="button row-button dark" href="SCREEN_TICKET_CARD.html?ticket=103">Открыть</a>
-                        </td>
+                    <tbody id="tickets-tbody">
+                    <tr>
+                        <td colspan="7" class="response-status">Загрузка тикетов...</td>
                     </tr>
                     </tbody>
                 </table>
             </div>
             <footer class="table-footer">
-                <span class="result-count">Показано 1–4 из 18 тикетов</span>
-                <span>Страницы: [1] 2</span>
+                <span class="result-count" id="result-count">Показано 0 тикетов</span>
             </footer>
         </section>
     </main>
 </div>
 
+<dialog class="modal-dialog" id="create-ticket-dialog">
+    <div class="modal-header">
+        <h3>Новый тикет</h3>
+        <button class="button dark" id="close-create-ticket" type="button">✕</button>
+    </div>
+    <form class="modal-form" id="create-ticket-form">
+        <label class="modal-field">
+            Название тикета *
+            <input class="field" name="title" type="text" required placeholder="Кратко опишите проблему">
+        </label>
+        <label class="modal-field">
+            Шаги воспроизведения *
+            <textarea class="field" name="reproductionSteps" required placeholder="1. Открыть...&#10;2. Нажать...&#10;Фактический: ...&#10;Ожидаемый: ..."></textarea>
+        </label>
+        <label class="modal-field">
+            Приоритет *
+            <select class="field" name="priority" required>
+                <option value="Critical">Critical</option>
+                <option value="High" selected>High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select>
+        </label>
+        <label class="modal-field">
+            Версия обнаружения *
+            <input class="field" name="discoveryVersion" type="text" required value="v1.2.0">
+        </label>
+        <label class="modal-field">
+            Дедлайн
+            <input class="field" name="deadline" type="date">
+        </label>
+        <p class="form-error" id="create-ticket-error" hidden></p>
+        <div class="modal-actions">
+            <button class="button dark" id="cancel-create-ticket" type="button">Отмена</button>
+            <button class="button" type="submit">Создать тикет</button>
+        </div>
+    </form>
+</dialog>
 
-<script src="./SCREEN_PROJECTS_AND_INVITES_SCRIPT.js"></script>
+<script src="./api.js"></script>
+<script src="./SCREEN_TICKET_REGISTRY_SCRIPT.js"></script>
 </body>
 </html>
-
