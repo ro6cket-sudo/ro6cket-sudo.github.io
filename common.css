@@ -1,0 +1,134 @@
+body {
+    margin: 0;
+    background: #141414;
+    color: #ffffff;
+    font: 11px/15px "Roboto Mono", monospace;
+    box-shadow: inset 0 0 0 1px #383838;
+}
+
+h1, h2, h3, p {
+    margin: 0;
+}
+
+h1 {
+    font-size: 15px;
+    line-height: 20px;
+}
+
+h2 {
+    margin-bottom: 2px;
+    padding: 5px 0;
+    color: #888888;
+    font-size: 10px;
+    line-height: 13px;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-size: 13px;
+    line-height: 18px;
+}
+
+small {
+    color: #666666;
+    font-size: 10px;
+    line-height: 13px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:focus-visible, button:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 2px;
+}
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 36px;
+    padding: 2px 14px 0;
+    background: #1c1c1c;
+    color: #e0e0e0;
+    box-shadow: inset 0 0 0 1px #383838;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.window-dots {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 240px minmax(0, 1fr);
+    min-height: calc(100vh - 36px);
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    padding: 22px 15px 13px;
+}
+
+.logo {
+    display: grid;
+    gap: 1px;
+    margin-left: 5px;
+}
+
+.logo strong {
+    font-size: 13px;
+    line-height: 17px;
+}
+
+.logo small {
+    color: #777777;
+}
+
+.navigation {
+    margin: 27px 0 16px;
+}
+
+.nav-link {
+    display: block;
+    padding: 8.5px 13px;
+    background: #282828;
+    font-weight: bold;
+}
+
+.profile {
+    margin-top: auto;
+    min-height: 42px;
+    padding: 10px;
+    border: 1px solid #333333;
+    border-radius: 4px;
+    background: #1a1a1a;
+    color: #e0e0e0;
+    font-weight: bold;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+    padding: 7px 42px 24px 25px;
+}
+
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.create-button {
+    width: 180px;
+    min-height: 36px;
+    background: #ffffff;
+}
